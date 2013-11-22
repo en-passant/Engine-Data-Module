@@ -1,0 +1,9 @@
+node_modules
+*.swp
+*.log
+output.txt
+.bin
+.DS_Store
+
+*~
+
