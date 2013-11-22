@@ -1,5 +1,8 @@
-function EngineDataModule() {
-	this.fetcher = new ( require( './lib/DataFetcher' ) )();
+function EngineDataModule( tokenStore ) {
+	this.tokenStore = tokenStore ? tokenStore : new ( require( './lib/DummyTokenStore' ))();
+	this.fetcher = new ( require( './lib/DataFetcher' ) )( tokenStore );
+
+// Document Producers
 
 	fetcher.registerDocProducer( require( './lib/producers/twitter/TwitterUserProfileProducer' ) );
 	fetcher.registerDocProducer( require( './lib/producers/twitter/TwitterTweetIndexProducer' ) );
@@ -36,6 +39,8 @@ function EngineDataModule() {
 
 	fetcher.registerDocProducer( require( './lib/producers/gmail/GMailUserProfileProducer' ) );
 	fetcher.registerDocProducer( require( './lib/producers/gmail/GMailMessageProducer' ) );
+
+// Document Translators
 
 	fetcher.registerTranslator( require( './lib/translators/twitter/TwitterUserProfileTranslator' ));
 	fetcher.registerTranslator( require( './lib/translators/twitter/TwitterDirectMessageTranslator' ));
