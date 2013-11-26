@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=XXXXXXXXXXXXXXXXXXXXXXXXX&sensor=false">
+    </script>
+
+	 <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(38, -97),
+          zoom: 4
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
+	<script>
+		function request() {
+		var self = this;
+		var req = new XMLHttpRequest();
+		req.onload = function() { 
+		   
+        var mapOptions = { center: new google.maps.LatLng(38.00, -97.00), zoom: 4 };
+
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+		  mapOptions);
+
+		if(this.response) {
+
+		  var res = JSON.parse(this.response);
+        self.r = this.response;
+		  console.log(res);
+			res.forEach(function(e) {
+				if( e.geo ) {
+					var contentString = e.body;
+					var infowindow = new google.maps.InfoWindow({
+						content: contentString
+					});
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(e.geo.coordinates[0], e.geo.coordinates[1]),
+						map: map,
+						title: '@tweetsgraffiti'
+					});
+					google.maps.event.addListener(marker, 'click', function() {
+						infowindow.open(map,marker);
+					});
+				}
+			});
+		}
+
+		};
+/*
+{ appData: { serviceName: 'Twitter' },
+    body: '@tweetsgraffiti can we clean it up?',
+    id: 'ldengine://tweetsgraffiti//@acct:twitter:2210018156/status/404334602451304448',
+    senderId: 'ldengine://tweetsgraffiti//@acct:twitter:2210018156/user/255126114',
+    geo: { type: 'Point', coordinates: [Object] },
+    timeSent: 1385235856000,
+    itemtype: 'Tweet',
+    inReplyTo: 'ldengine://tweetsgraffiti//@acct:twitter:2210018156/status/404332476396343296' },*/
+
+		req.open("get","/data",true);
+		req.send();
+
+	}
+	request();
+	setInterval(request,30000);
+	</script>
+  </head>
+  <body>
+    <div id="map-canvas"/>
+  </body>
+</html>
