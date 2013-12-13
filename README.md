@@ -40,6 +40,11 @@ Within the URI format described above, there is some variation in the data which
 |         | ldengine://{owner}//@acct:gmail:{accountID}/message/{mailboxName}/message-id/{msgID} | Email message in given mailbox according to its "message-id" SMTP header |
 |         | ldengine://{owner}//@acct:gmail:{accountID}/message/{mailboxName}/uid/{msgID} | Email message in given mailbox with server-assigned UID {msgID} |
 |         | ldengine://{owner}//@acct:gmail:{accountID}/message/{mailboxName}/{seqNumber} | Email message in given mailbox according to its sequence number |
+| IMAP    | ldengine://{owner}//@acct:imap:{username}@{server}/user/{username} | User profile for {username} (This data is very limited) |
+|         | ldengine://{owner}//@acct:imap:{username}@{server}/mailbox/_index     | List of mailboxes in ownerID's account. |
+|         | ldengine://{owner}//@acct:imap:{username}@{server}/mailbox/{mailboxName} | List of messages in mailbox named {mailboxName}, by URI |
+|         | ldengine://{owner}//@acct:imap:{username}@{server}/message/{mailboxName}/uid/{msgID} | Email message in given mailbox with server-assigned UID {msgID} |
+|         | ldengine://{owner}//@acct:imap:{username}@{server}/message/{mailboxName}/{seqNumber} | Email message in given mailbox according to its sequence number |
 | Twitter | ldengine://{owner}//@acct:twitter:{accountID}/user/{userID}        | User Profile for {userID} |
 |         | ldengine://{owner}//@acct:twitter:{accountID}/status/sent          | Status messages sent by {accountID} |
 |         | ldengine://{owner}//@acct:twitter:{accountID}/{userID}/relationship/outgoing/confirmed | List of users that {userID} is following. |
