@@ -20,12 +20,11 @@ describe('Testing Imap User Profile', function() {
 	    }, function(){});
   });
 
-  it('should show contact a form', function() {
+  it('should return users imap profile', function() {
     datamodule.fetcher.fetch(
       'ldengine://curtis//@acct:imap:curtislacy221@yahoo.com@imap.mail.yahoo.com/user/curtis.lacy',
        function(error, result) {
          assert.equal(error, null);
-         //done();
        });
   });
 
