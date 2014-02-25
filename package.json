@@ -18,6 +18,7 @@
      "underscore": "1.4.x",
      "mocha": "1.17.1",
      "chai": "1.9.0",
+     "node-fs" : "0.1.7",
      "engine-data-module": "git+https://github.com/LDEngine/Engine-Data-Module.git#master"
 	}
 }
