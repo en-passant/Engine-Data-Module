@@ -1,7 +1,7 @@
 process.env.NODE_ENV = 'test';
 var EDM = require( 'engine-data-module' );
 var fs = require('fs');
-var userData = fs.readFileSync('imap/TestUserData.txt').toString().split("\n");
+var userData = fs.readFileSync('test/imap/TestUserData.txt').toString().split("\n");
 var tokenStore = new EDM.DummyTokenStore();
 var assert = require('assert');
 var datamodule = new EDM.DataModule({
