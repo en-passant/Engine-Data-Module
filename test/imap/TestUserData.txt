@@ -1,0 +1,5 @@
+randomimap@yahoo.com
+Datamodule1234
+imap.mail.yahoo.com
+993
+on
