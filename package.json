@@ -23,6 +23,7 @@
      "chai": "1.9.0",
      "node-fs" : "0.1.7",
      "travis-ci" : "1.2.0",
+     "everyauth" : "0.4.5",
      "engine-data-module": "git+https://github.com/LDEngine/Engine-Data-Module.git#master"
 	}
 }
