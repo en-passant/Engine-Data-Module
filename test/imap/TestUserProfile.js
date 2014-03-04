@@ -1,5 +1,7 @@
 process.env.NODE_ENV = 'test';
 var EDM = require( 'engine-data-module' );
+var fs = require('fs');
+var userData = fs.readFileSync('test/imap/TestUserData.txt').toString().split("\n");
 var tokenStore = new EDM.DummyTokenStore();
 var assert = require('assert');
 var datamodule = new EDM.DataModule({
@@ -8,24 +10,24 @@ var datamodule = new EDM.DataModule({
 });
 
 describe('Testing Imap User Profile', function() {
+  
   before(function() {
     tokenStore.storeUserTokens(
       'curtis', 'acct:imap:curtislacy221@yahoo.com@imap.mail.yahoo.com',
 	    {
-		     username: 'curtislacy221@yahoo.com',
-		     password: 'enR9GBEU-Zrqm-2xev_PpQ_cuN-TqyTg',
-		     host: 'imap.mail.yahoo.com',
-		     port: '993',
-		     secure: 'on'
+		     username: userData[0],
+		     password: userData[1],
+		     host: userData[2],
+		     port: userData[3],
+		     secure: userData[4]
 	    }, function(){});
   });
 
-  it('should show contact a form', function() {
+  it('should return users imap profile', function() {
     datamodule.fetcher.fetch(
       'ldengine://curtis//@acct:imap:curtislacy221@yahoo.com@imap.mail.yahoo.com/user/curtis.lacy',
        function(error, result) {
          assert.equal(error, null);
-         //done();
        });
   });
 

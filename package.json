@@ -5,6 +5,9 @@
 		"node": "0.8.x",
 		"npm": "1.1.x"
 	},
+  "scripts": {
+    "test": "mocha --recursive test"
+  },
   "main": "./main.js",
 	"dependencies": {
      "oauth": "0.9.x",
@@ -18,6 +21,8 @@
      "underscore": "1.4.x",
      "mocha": "1.17.1",
      "chai": "1.9.0",
+     "node-fs" : "0.1.7",
+     "travis-ci" : "1.2.0",
      "engine-data-module": "git+https://github.com/LDEngine/Engine-Data-Module.git#master"
 	}
 }
