@@ -16,7 +16,10 @@ function EngineDataModule( options ) {
 		this.fetcher.registerDocProducer( require( './lib/producers/twitter/TwitterDirectMessagesReceivedProducer' ) );
 		this.fetcher.registerDocProducer( require( './lib/producers/twitter/TweetProducer' ) );
 	}
-	
+
+  //if (!options.services || options.services.indexof('facebook')>=0) {
+    this.fetcher.registerDocProducer(require('./lib/producers/facebook/FacebookUserProfileProducer'));
+  //}
 	if( !options.services || options.services.indexOf( 'app.net' ) >= 0 )
 	{
 		this.fetcher.registerDocProducer( require( './lib/producers/appdotnet/AppDotNetUserProfileProducer') );
@@ -25,13 +28,13 @@ function EngineDataModule( options ) {
 		this.fetcher.registerDocProducer( require( './lib/producers/appdotnet/AppDotNetPostCreatedProducer') );
 		this.fetcher.registerDocProducer( require( './lib/producers/appdotnet/AppDotNetPostMentionsProducer') );
 	}
-	
+
 	if( !options.services || options.services.indexOf( 'googlecontacts' ) >= 0 )
 	{
 		this.fetcher.registerDocProducer( require( './lib/producers/googlecontacts/GoogleContactsUserProfileProducer' ) );
 		this.fetcher.registerDocProducer( require( './lib/producers/googlecontacts/GoogleContactsContactListProducer' ) );
 	}
-	
+
 	if( !options.services || options.services.indexOf( 'imap' ) >= 0 )
 	{
 		this.fetcher.registerDocProducer( require( './lib/producers/imap/ImapUserProfileProducer' ) );
@@ -41,7 +44,7 @@ function EngineDataModule( options ) {
 		this.fetcher.registerDocProducer( require( './lib/producers/imap/ImapUidMessageProducer' ));
 		this.fetcher.registerDocProducer( require( './lib/producers/imap/ImapMessageProducer' ));
 	}
-	
+
 	if( !options.services || options.services.indexOf( 'googlecalendars' ) >= 0 )
 	{
 		this.fetcher.registerDocProducer( require( './lib/producers/googlecalendars/GoogleCalendarsUserProfileProducer' ) );
@@ -49,7 +52,7 @@ function EngineDataModule( options ) {
 		this.fetcher.registerDocProducer( require( './lib/producers/googlecalendars/GoogleCalendarsEventListProducer' ) );
 		this.fetcher.registerDocProducer( require( './lib/producers/googlecalendars/GoogleCalendarsEventProducer' ) );
 	}
-	
+
 	if( !options.services || options.services.indexOf( 'gmail' ) >= 0 )
 	{
 		this.fetcher.registerDocProducer( require( './lib/producers/gmail/GMailUserProfileProducer' ) );
@@ -66,6 +69,10 @@ function EngineDataModule( options ) {
 		this.fetcher.registerTranslator( require( './lib/translators/twitter/TwitterTweetTranslator' ));
 	}
 
+ // if (options.services && options.services.indexOf('facebook')>=0) {
+    this.fetcher.registerTranslator(require('./lib/translators/facebook/FacebookUserProfileTranslator'));
+//  }
+
 	if( !options.services || options.services.indexOf( 'app.net' ) >= 0 )
 	{
 		this.fetcher.registerTranslator( require( './lib/translators/appdotnet/AppDotNetUserProfileTranslator' ));
@@ -74,13 +81,13 @@ function EngineDataModule( options ) {
 		this.fetcher.registerTranslator( require( './lib/translators/appdotnet/AppDotNetUserFollowingTranslator' ));
 		this.fetcher.registerTranslator( require( './lib/translators/appdotnet/AppDotNetPostCreatedTranslator' ));
 	}
-	
+
 	if( !options.services || options.services.indexOf( 'googlecontacts' ) >= 0 )
 	{
 		this.fetcher.registerTranslator( require( './lib/translators/googlecontacts/GoogleContactsUserProfileTranslator' ));
 		this.fetcher.registerTranslator( require( './lib/translators/googlecontacts/GoogleContactsContactListTranslator' ));
 	}
-	
+
 	if( !options.services || options.services.indexOf( 'googlecalendars' ) >= 0 )
 	{
 		this.fetcher.registerTranslator( require( './lib/translators/googlecalendars/GoogleCalendarsUserProfileTranslator' ));
@@ -88,7 +95,7 @@ function EngineDataModule( options ) {
 		this.fetcher.registerTranslator( require( './lib/translators/googlecalendars/GoogleCalendarsEventListTranslator' ));
 		this.fetcher.registerTranslator( require( './lib/translators/googlecalendars/GoogleCalendarsEventTranslator' ));
 	}
-	
+
 	if( !options.services || options.services.indexOf( 'imap' ) >= 0 )
 	{
 		this.fetcher.registerTranslator( require( './lib/translators/imap/ImapUserProfileTranslator' ));
@@ -96,7 +103,7 @@ function EngineDataModule( options ) {
 		this.fetcher.registerTranslator( require( './lib/translators/imap/ImapMailboxContentsTranslator' ) );
 		this.fetcher.registerTranslator( require( './lib/translators/imap/ImapMessageTranslator' ) );
 	}
-	
+
 	if( !options.services || options.services.indexOf( 'gmail' ) >= 0 )
 	{
 		this.fetcher.registerTranslator( require( './lib/translators/gmail/GMailUserProfileTranslator' ));
