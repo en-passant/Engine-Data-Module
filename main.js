@@ -17,9 +17,12 @@ function EngineDataModule( options ) {
 		this.fetcher.registerDocProducer( require( './lib/producers/twitter/TweetProducer' ) );
 	}
 
-  //if (!options.services || options.services.indexof('facebook')>=0) {
+  if ( options.services != null && options.services[0] == 'facebook') {
     this.fetcher.registerDocProducer(require('./lib/producers/facebook/FacebookUserProfileProducer'));
-  //}
+    this.fetcher.registerDocProducer(require('./lib/producers/facebook/FacebookContactListProducer'));
+    this.fetcher.registerDocProducer(require('./lib/producers/facebook/FacebookNewsFeedProducer'));
+  }
+
 	if( !options.services || options.services.indexOf( 'app.net' ) >= 0 )
 	{
 		this.fetcher.registerDocProducer( require( './lib/producers/appdotnet/AppDotNetUserProfileProducer') );
@@ -69,9 +72,11 @@ function EngineDataModule( options ) {
 		this.fetcher.registerTranslator( require( './lib/translators/twitter/TwitterTweetTranslator' ));
 	}
 
- // if (options.services && options.services.indexOf('facebook')>=0) {
+  if ( options.services != null && options.services[0] == 'facebook') {
     this.fetcher.registerTranslator(require('./lib/translators/facebook/FacebookUserProfileTranslator'));
-//  }
+    this.fetcher.registerTranslator(require('./lib/translators/facebook/FacebookContactListTranslator'));
+    this.fetcher.registerTranslator(require('./lib/translators/facebook/FacebookNewsFeedTranslator'));
+  }
 
 	if( !options.services || options.services.indexOf( 'app.net' ) >= 0 )
 	{
