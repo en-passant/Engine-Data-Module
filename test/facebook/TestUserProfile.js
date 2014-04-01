@@ -1,4 +1,6 @@
 process.env.NODE_ENY = 'test';
+process.env.FACEBOOK_KEY = '500475259980837';
+process.env.FACEBOOK_SECRET = '1502a48345e37d6555167fd2c62ad83';
 var EDM = require('engine-data-module');
 var fs = require('fs');
 var tokenStore = new EDM.DummyTokenStore();
@@ -12,6 +14,7 @@ describe('Testing Facebook User Profile', function() {
   before(function(){
     tokenStore.storeApplicationTokens('facebook',
      {
+<<<<<<< HEAD
        'clientID': 'WKNX6sfLc4GbJD0qeBomg',
        'clientSecret':'bQ8YOtdwNdqEPN6q92LnIE8MWgCnrgRf06NWTaN81IA',
        'callbackUrl' :'https://127.0.0.1:3000/facebooklogin/return',
