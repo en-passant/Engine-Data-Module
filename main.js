@@ -22,6 +22,7 @@ function EngineDataModule( options ) {
     this.fetcher.registerDocProducer(require('./lib/producers/facebook/FacebookContactListProducer'));
     this.fetcher.registerDocProducer(require('./lib/producers/facebook/FacebookNewsFeedProducer'));
     this.fetcher.registerDocProducer(require('./lib/producers/facebook/FacebookStatusesFeedProducer'));
+    this.fetcher.registerDocProducer(require('./lib/producers/facebook/FacebookUserLikesProducer'));
   }
 
 	if( !options.services || options.services.indexOf( 'app.net' ) >= 0 )
@@ -78,6 +79,7 @@ function EngineDataModule( options ) {
     this.fetcher.registerTranslator(require('./lib/translators/facebook/FacebookContactListTranslator'));
     this.fetcher.registerTranslator(require('./lib/translators/facebook/FacebookNewsFeedTranslator'));
     this.fetcher.registerTranslator(require('./lib/translators/facebook/FacebookStatusesFeedTranslator'));
+    this.fetcher.registerTranslator(require('./lib/translators/facebook/FacebookUserLikesTranslator'));
   }
 
 	if( !options.services || options.services.indexOf( 'app.net' ) >= 0 )
