@@ -54,7 +54,6 @@ Within the URI format described above, there is some variation in the data which
 |         | ldengine://{owner}//@acct:twitter:{accountID}/{userID}/relationship/incoming/pending   | List of users that have requested to follow {userID} |
 |         | ldengine://{owner}//@acct:twitter:{accountID}/direct/sent      | Direct messages sent by {accountID} |
 |         | ldengine://{owner}//@acct:twitter:{accountID}/direct/received  | Direct messages received by {accountID} |
-
 | Facebook| ldengine://{owner}//@acct:facebook:{accountID}/user/{userID}        | User Profile for {userID} |
 |         | ldengine://{owner}//@acct:facebook:{accountID}/contacts             | User's friends profile list |
 |         | ldengine://{owner}//@acct:facebook:{accountID}/fnews                | User's news feed |
