@@ -64,6 +64,9 @@ Within the URI format described above, there is some variation in the data which
 |         | ldengine://{owner}//@acct:facebook:{accountID}/flinks               | Links shared by user |
 |         | ldengine://{owner}//@acct:facebook:{accountID}/fphotos              | User's photos |
 |         | ldengine://{owner}//@acct:facebook:{accountID}/fposts               | Posts shared by user |
+|         | ldengine://{owner}//@acct:facebook:{accountID}/falbums              | albums shared by user |
+|         | ldengine://{owner}//@acct:facebook:{accountID}/fnotes               | User's notes |
+|         | ldengine://{owner}//@acct:facebook:{accountID}/fvideos              | Videos shared by user |
 
 Code Sample
 ==================
