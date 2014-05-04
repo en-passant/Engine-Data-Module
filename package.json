@@ -28,6 +28,7 @@
      "passport-facebook" : "1.0.2",
      "fb" : "0.6.2",
      "fbgraph" : "0.2.9",
+     "mtwitter" : "1.5.3",
      "engine-data-module": "git+https://github.com/LDEngine/Engine-Data-Module.git#master"
 	}
 }
