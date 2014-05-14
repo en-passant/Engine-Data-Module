@@ -2,7 +2,7 @@
 	"name": "engine-data-module",
 	"version": "0.0.1",
 	"engines": {
-		"node": "0.8.x",
+		"node": "0.10.x",
 		"npm": "1.1.x"
 	},
   "scripts": {
@@ -27,7 +27,6 @@
      "passport" : "0.2.0",
      "passport-facebook" : "1.0.2",
      "fb" : "0.6.2",
-     "fbgraph" : "0.2.9",
-     "engine-data-module": "git+https://github.com/LDEngine/Engine-Data-Module.git#master"
+     "fbgraph" : "0.2.9"
 	}
 }
