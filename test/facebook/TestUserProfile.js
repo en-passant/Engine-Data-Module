@@ -14,7 +14,6 @@ describe('Testing Facebook User Profile', function() {
   before(function(){
     tokenStore.storeApplicationTokens('facebook',
      {
-<<<<<<< HEAD
        'clientID': 'WKNX6sfLc4GbJD0qeBomg',
        'clientSecret':'bQ8YOtdwNdqEPN6q92LnIE8MWgCnrgRf06NWTaN81IA',
        'callbackUrl' :'https://127.0.0.1:3000/facebooklogin/return',
